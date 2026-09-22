@@ -1,443 +1,461 @@
 {
-  "version": 2,
+  "version": 3,
   "manifest": {
     "media/DESCRIPTION.md": [
-      1790017574869835519,
+      1790089130127937434,
       139,
-      9765083,
-      1790017574869835519
+      9482380,
+      1790089130127937434
     ],
     "media/gif-search/SKILL.md": [
-      1790017574869883041,
+      1790089130128015028,
       2720,
-      9764656,
-      1790017574869883041
+      9481952,
+      1790089130128015028
     ],
     "media/songsee/SKILL.md": [
-      1790017574869951275,
+      1790089130128100497,
       2336,
-      9764658,
-      1790017574869951275
+      9481954,
+      1790089130128100497
     ],
     "media/youtube-content/SKILL.md": [
-      1790017574870002102,
+      1790089130128184703,
       3538,
-      9764664,
-      1790017574870002102
+      9481960,
+      1790089130128184703
     ],
     "note-taking/DESCRIPTION.md": [
-      1790017574870145399,
+      1790089130128470425,
       146,
-      9765084,
-      1790017574870145399
+      9482381,
+      1790089130128470425
     ],
     "note-taking/obsidian/SKILL.md": [
-      1790017574870192981,
+      1790089130128553259,
       3092,
-      9764667,
-      1790017574870192981
+      9481963,
+      1790089130128553259
     ],
     "productivity/DESCRIPTION.md": [
-      1790017574870246262,
+      1790089130128646072,
       114,
-      9765085,
-      1790017574870246262
+      9482382,
+      1790089130128646072
     ],
     "productivity/airtable/SKILL.md": [
-      1790017574870295236,
+      1790089130128734706,
       11314,
-      9764670,
-      1790017574870295236
+      9481966,
+      1790089130128734706
     ],
     "productivity/powerpoint/SKILL.md": [
-      1790017574976109126,
+      1790089130133597683,
       10781,
-      9764680,
-      1790017574976109126
+      9481976,
+      1790089130133597683
     ],
     "productivity/document-to-action-items/SKILL.md": [
-      1790017574898555345,
+      1790089130129809626,
       3910,
-      9764683,
-      1790017574898555345
+      9481979,
+      1790089130129809626
     ],
     "productivity/product-price-monitor/SKILL.md": [
-      1790017574976439907,
+      1790089130134149078,
       4400,
-      9764685,
-      1790017574976439907
+      9481981,
+      1790089130134149078
     ],
     "productivity/google-workspace/SKILL.md": [
-      1790017574899154754,
+      1790089130130880047,
       13926,
-      9764695,
-      1790017574899154754
+      9481991,
+      1790089130130880047
     ],
     "productivity/box/SKILL.md": [
-      1790017574897988567,
+      1790089130128830114,
       11697,
-      9764708,
-      1790017574897988567
+      9482004,
+      1790089130128830114
     ],
     "productivity/xlsx/SKILL.md": [
-      1790017574976630816,
+      1790089130134515800,
       9655,
-      9764722,
-      1790017574976630816
+      9482018,
+      1790089130134515800
     ],
     "productivity/docx/SKILL.md": [
-      1790017574898642397,
+      1790089130129958062,
       10395,
-      9764738,
-      1790017574898642397
+      9482034,
+      1790089130129958062
     ],
     "productivity/weekly-review-planning/SKILL.md": [
-      1790017574976543935,
+      1790089130134324254,
       3975,
-      9764741,
-      1790017574976543935
+      9482037,
+      1790089130134324254
     ],
     "productivity/collective-wisdom-install/SKILL.md": [
-      1790017574898502996,
+      1790089130129721742,
       7210,
-      9765115,
-      1790017574898502996
+      9482412,
+      1790089130129721742
     ],
     "productivity/meeting-action-items/SKILL.md": [
-      1790017574974988137,
+      1790089130131692278,
       3808,
-      9764743,
-      1790017574974988137
+      9482039,
+      1790089130131692278
     ],
     "productivity/maps/SKILL.md": [
-      1790017574974820904,
+      1790089130131499730,
       6705,
-      9764747,
-      1790017574974820904
+      9482043,
+      1790089130131499730
     ],
     "productivity/teams-meeting-pipeline/SKILL.md": [
-      1790017574976493218,
+      1790089130134237402,
       7206,
-      9764749,
-      1790017574976493218
+      9482045,
+      1790089130134237402
     ],
     "productivity/notion/SKILL.md": [
-      1790017574975040967,
+      1790089130131779470,
       14621,
-      9764753,
-      1790017574975040967
+      9482049,
+      1790089130131779470
     ],
     "productivity/pdf/SKILL.md": [
-      1790017574975187319,
+      1790089130132001493,
       12489,
-      9764777,
-      1790017574975187319
+      9482073,
+      1790089130132001493
     ],
     "research/DESCRIPTION.md": [
-      1790017574977103062,
+      1790089130135325977,
       179,
-      9765086,
-      1790017574977103062
+      9482383,
+      1790089130135325977
     ],
     "research/arxiv/SKILL.md": [
-      1790017574977154910,
+      1790089130135452743,
       10061,
-      9764783,
-      1790017574977154910
+      9482079,
+      1790089130135452743
     ],
     "research/competitor-news-monitor/SKILL.md": [
-      1790017574977259959,
+      1790089130135607722,
       4619,
-      9764785,
-      1790017574977259959
+      9482081,
+      1790089130135607722
     ],
     "research/rss-feeds/SKILL.md": [
-      1790017575237901466,
+      1790089130136227154,
       4557,
-      9765118,
-      1790017575237901466
+      9482414,
+      1790089130136227154
     ],
     "research/llm-wiki/SKILL.md": [
-      1790017575237799392,
+      1790089130136104976,
       20121,
-      9764787,
-      1790017575237799392
+      9482083,
+      1790089130136104976
     ],
     "research/grounded-citations/SKILL.md": [
-      1790017574977314142,
+      1790089130135695705,
       12652,
-      9764795,
-      1790017574977314142
+      9482091,
+      1790089130135695705
     ],
     "git-workflow/SKILL.md": [
-      1790017574869717851,
+      1790089130127775833,
       1914,
-      9765111,
-      1790017574869717851
+      9482408,
+      1790089130127775833
     ],
     "social-media/DESCRIPTION.md": [
-      1790017575238052605,
+      1790089130136430582,
       151,
-      9765087,
-      1790017575238052605
+      9482384,
+      1790089130136430582
     ],
     "social-media/xurl/SKILL.md": [
-      1790017575238243144,
+      1790089130136708730,
       16345,
-      9764798,
-      1790017575238243144
+      9482094,
+      1790089130136708730
     ],
     "social-media/reddit-reading/SKILL.md": [
-      1790017575238118806,
+      1790089130136529767,
       6279,
-      9765122,
-      1790017575238118806
+      9482418,
+      1790089130136529767
     ],
     "autonomous-ai-agents/DESCRIPTION.md": [
-      1790017574794698981,
+      1790089130112720147,
       211,
-      9765088,
-      1790017574794698981
+      9482385,
+      1790089130112720147
     ],
     "autonomous-ai-agents/opencode/SKILL.md": [
-      1790017574796001545,
+      1790089130114755342,
       7297,
-      9764801,
-      1790017574796001545
+      9482097,
+      1790089130114755342
     ],
     "autonomous-ai-agents/hermes-agent/SKILL.md": [
-      1790017574794985606,
+      1790089130113089564,
       13183,
-      9764826,
-      1790017574794985606
+      9482122,
+      1790089130113089564
     ],
     "autonomous-ai-agents/claude-code/SKILL.md": [
-      1790017574794756298,
+      1790089130112809934,
       35175,
-      9764828,
-      1790017574794756298
+      9482124,
+      1790089130112809934
     ],
     "autonomous-ai-agents/computer-use/SKILL.md": [
-      1790017574794876791,
+      1790089130113001069,
       18054,
-      9764830,
-      1790017574794876791
+      9482126,
+      1790089130113001069
     ],
     "autonomous-ai-agents/codex/SKILL.md": [
-      1790017574794822518,
+      1790089130112917624,
       5852,
-      9764832,
-      1790017574794822518
+      9482128,
+      1790089130112917624
     ],
     "email/DESCRIPTION.md": [
-      1790017574869418397,
+      1790089130127269251,
       101,
-      9765089,
-      1790017574869418397
+      9482386,
+      1790089130127269251
     ],
     "email/email-inbox-triage/SKILL.md": [
-      1790017574869469184,
+      1790089130127374636,
       5447,
-      9764835,
-      1790017574869469184
+      9482131,
+      1790089130127374636
     ],
     "email/himalaya/SKILL.md": [
-      1790017574869522154,
+      1790089130127474252,
       7272,
-      9764840,
-      1790017574869522154
+      9482136,
+      1790089130127474252
     ],
     "apple/DESCRIPTION.md": [
-      1790017574794443985,
+      1790089130112254751,
       137,
-      9765090,
-      1790017574794443985
+      9482387,
+      1790089130112254751
     ],
     "apple/imessage/SKILL.md": [
-      1790017574794646692,
+      1790089130112633996,
       2442,
-      9764843,
-      1790017574794646692
+      9482139,
+      1790089130112633996
     ],
     "apple/apple-notes/SKILL.md": [
-      1790017574794497055,
+      1790089130112261255,
       2394,
-      9764845,
-      1790017574794497055
+      9482141,
+      1790089130112261255
     ],
     "apple/findmy/SKILL.md": [
-      1790017574794600332,
+      1790089130112549058,
       3823,
-      9764847,
-      1790017574794600332
+      9482143,
+      1790089130112549058
     ],
     "apple/apple-reminders/SKILL.md": [
-      1790017574794548623,
+      1790089130112463279,
       3606,
-      9764849,
-      1790017574794548623
+      9482145,
+      1790089130112463279
     ],
     "improve/SKILL.md": [
-      1790017574869782649,
+      1790089130127864378,
       9042,
-      9765113,
-      1790017574869782649
+      9482410,
+      1790089130127864378
     ],
     "software-development/simplify-code/SKILL.md": [
-      1790017575373015890,
+      1790089130139270094,
       14696,
-      9764852,
-      1790017575373015890
+      9482148,
+      1790089130139270094
     ],
     "software-development/python-debugpy/SKILL.md": [
-      1790017575372832863,
+      1790089130138987368,
       13366,
-      9764854,
-      1790017575372832863
+      9482150,
+      1790089130138987368
     ],
     "software-development/github/SKILL.md": [
-      1790017575238523158,
+      1790089130137156452,
       2446,
-      9764875,
-      1790017575238523158
+      9482171,
+      1790089130137156452
     ],
     "software-development/systematic-debugging/SKILL.md": [
-      1790017575373128100,
+      1790089130139483801,
       14059,
-      9764877,
-      1790017575373128100
+      9482173,
+      1790089130139483801
+    ],
+    "software-development/read-the-damn-docs/SKILL.md": [
+      1790089130139100679,
+      5208,
+      9482426,
+      1790089130139100679
     ],
     "software-development/node-inspect-debugger/SKILL.md": [
-      1790017575239367137,
+      1790089130138903091,
       11065,
-      9764879,
-      1790017575239367137
+      9482175,
+      1790089130138903091
+    ],
+    "software-development/laravel-patterns/SKILL.md": [
+      1790089130138818464,
+      4797,
+      9482424,
+      1790089130138818464
     ],
     "software-development/codebase-inspection/SKILL.md": [
-      1790017575238316816,
+      1790089130136819015,
       3612,
-      9764881,
-      1790017575238316816
+      9482177,
+      1790089130136819015
+    ],
+    "software-development/improve-workflows/SKILL.md": [
+      1790089130138634762,
+      3932,
+      9482422,
+      1790089130138634762
     ],
     "software-development/test-driven-development/SKILL.md": [
-      1790017575373184326,
+      1790089130139580872,
       10300,
-      9764883,
-      1790017575373184326
+      9482179,
+      1790089130139580872
     ],
     "software-development/hermes-agent-skill-authoring/SKILL.md": [
-      1790017575239261317,
+      1790089130138512495,
       14504,
-      9764885,
-      1790017575239261317
+      9482181,
+      1790089130138512495
     ],
     "software-development/spike/SKILL.md": [
-      1790017575373076042,
+      1790089130139382443,
       8723,
-      9764887,
-      1790017575373076042
+      9482183,
+      1790089130139382443
     ],
     "software-development/inspecting-hermes-desktop-dom/SKILL.md": [
-      1790017575239316640,
+      1790089130138716885,
       6250,
-      9764889,
-      1790017575239316640
+      9482185,
+      1790089130138716885
     ],
     "software-development/requesting-code-review/SKILL.md": [
-      1790017575372952264,
+      1790089130139185918,
       8781,
-      9764891,
-      1790017575372952264
+      9482187,
+      1790089130139185918
     ],
     "software-development/dogfood/SKILL.md": [
-      1790017575238367603,
+      1790089130136909854,
       6324,
-      9764897,
-      1790017575238367603
+      9482193,
+      1790089130136909854
     ],
     "web/DESCRIPTION.md": [
-      1790017575373237416,
+      1790089130139674095,
       137,
-      9765091,
-      1790017575373237416
+      9482388,
+      1790089130139674095
     ],
     "web/blocked-page-recovery/SKILL.md": [
-      1790017575373285319,
+      1790089130139751940,
       5175,
-      9764902,
-      1790017575373285319
+      9482198,
+      1790089130139751940
     ],
     "creative/DESCRIPTION.md": [
-      1790017574796074335,
+      1790089130114849397,
       116,
-      9765092,
-      1790017574796074335
+      9482389,
+      1790089130114849397
     ],
     "creative/baoyu-infographic/SKILL.md": [
-      1790017574803681392,
+      1790089130116108910,
       10434,
-      9764953,
-      1790017574803681392
+      9482249,
+      1790089130116108910
     ],
     "creative/design-md/SKILL.md": [
-      1790017574805586468,
+      1790089130119587581,
       8477,
-      9764958,
-      1790017574805586468
+      9482254,
+      1790089130119587581
     ],
     "creative/architecture-diagram/SKILL.md": [
-      1790017574796131752,
+      1790089130114937652,
       5830,
-      9764962,
-      1790017574796131752
+      9482258,
+      1790089130114937652
     ],
     "creative/humanizer/SKILL.md": [
-      1790017574805725269,
+      1790089130119820424,
       34463,
-      9764964,
-      1790017574805725269
+      9482260,
+      1790089130119820424
     ],
     "creative/songwriting-and-ai-music/SKILL.md": [
-      1790017574869297354,
+      1790089130127068747,
       10963,
-      9764967,
-      1790017574869297354
+      9482263,
+      1790089130127068747
     ],
     "creative/manim-video/SKILL.md": [
-      1790017574805828165,
+      1790089130119988076,
       12150,
-      9764986,
-      1790017574805828165
+      9482282,
+      1790089130119988076
     ],
     "creative/popular-web-designs/SKILL.md": [
-      1790017574814580126,
+      1790089130122600796,
       9722,
-      9765044,
-      1790017574814580126
+      9482341,
+      1790089130122600796
     ],
     "creative/p5js/SKILL.md": [
-      1790017574813817079,
+      1790089130121281342,
       27534,
-      9765064,
-      1790017574813817079
+      9482361,
+      1790089130121281342
     ],
     "creative/claude-design/SKILL.md": [
-      1790017574805518405,
+      1790089130119483518,
       25117,
-      9765067,
-      1790017574805518405
+      9482364,
+      1790089130119483518
     ],
     "creative/ascii-video/SKILL.md": [
-      1790017574796293277,
+      1790089130115211571,
       15011,
-      9765078,
-      1790017574796293277
+      9482375,
+      1790089130115211571
     ],
     "devops/sdlc-review/SKILL.md": [
-      1790017574869364025,
+      1790089130127175216,
       9073,
-      9765082,
-      1790017574869364025
+      9482379,
+      1790089130127175216
     ]
   },
   "skills": [
@@ -445,7 +463,7 @@
       "skill_name": "apple-notes",
       "category": "apple",
       "frontmatter_name": "apple-notes",
-      "description": "",
+      "description": "Manage Apple Notes via memo CLI: create, search, edit.",
       "platforms": [
         "macos"
       ],
@@ -455,13 +473,14 @@
         "fallback_for_tools": [],
         "requires_tools": [],
         "session_platforms": []
-      }
+      },
+      "requires_apps": []
     },
     {
       "skill_name": "apple-reminders",
       "category": "apple",
       "frontmatter_name": "apple-reminders",
-      "description": "",
+      "description": "Apple Reminders via remindctl: add, list, complete.",
       "platforms": [
         "macos"
       ],
@@ -471,13 +490,14 @@
         "fallback_for_tools": [],
         "requires_tools": [],
         "session_platforms": []
-      }
+      },
+      "requires_apps": []
     },
     {
       "skill_name": "findmy",
       "category": "apple",
       "frontmatter_name": "findmy",
-      "description": "",
+      "description": "Track Apple devices/AirTags via FindMy.app on macOS.",
       "platforms": [
         "macos"
       ],
@@ -487,13 +507,14 @@
         "fallback_for_tools": [],
         "requires_tools": [],
         "session_platforms": []
-      }
+      },
+      "requires_apps": []
     },
     {
       "skill_name": "imessage",
       "category": "apple",
       "frontmatter_name": "imessage",
-      "description": "",
+      "description": "Send and receive iMessages/SMS via the imsg CLI on macOS.",
       "platforms": [
         "macos"
       ],
@@ -503,7 +524,8 @@
         "fallback_for_tools": [],
         "requires_tools": [],
         "session_platforms": []
-      }
+      },
+      "requires_apps": []
     },
     {
       "skill_name": "claude-code",
@@ -521,7 +543,8 @@
         "fallback_for_tools": [],
         "requires_tools": [],
         "session_platforms": []
-      }
+      },
+      "requires_apps": []
     },
     {
       "skill_name": "codex",
@@ -539,7 +562,8 @@
         "fallback_for_tools": [],
         "requires_tools": [],
         "session_platforms": []
-      }
+      },
+      "requires_apps": []
     },
     {
       "skill_name": "computer-use",
@@ -557,7 +581,8 @@
         "fallback_for_tools": [],
         "requires_tools": [],
         "session_platforms": []
-      }
+      },
+      "requires_apps": []
     },
     {
       "skill_name": "hermes-agent",
@@ -575,7 +600,8 @@
         "fallback_for_tools": [],
         "requires_tools": [],
         "session_platforms": []
-      }
+      },
+      "requires_apps": []
     },
     {
       "skill_name": "opencode",
@@ -593,7 +619,8 @@
         "fallback_for_tools": [],
         "requires_tools": [],
         "session_platforms": []
-      }
+      },
+      "requires_apps": []
     },
     {
       "skill_name": "architecture-diagram",
@@ -611,7 +638,8 @@
         "fallback_for_tools": [],
         "requires_tools": [],
         "session_platforms": []
-      }
+      },
+      "requires_apps": []
     },
     {
       "skill_name": "ascii-video",
@@ -629,7 +657,8 @@
         "fallback_for_tools": [],
         "requires_tools": [],
         "session_platforms": []
-      }
+      },
+      "requires_apps": []
     },
     {
       "skill_name": "baoyu-infographic",
@@ -647,7 +676,8 @@
         "fallback_for_tools": [],
         "requires_tools": [],
         "session_platforms": []
-      }
+      },
+      "requires_apps": []
     },
     {
       "skill_name": "claude-design",
@@ -665,7 +695,8 @@
         "fallback_for_tools": [],
         "requires_tools": [],
         "session_platforms": []
-      }
+      },
+      "requires_apps": []
     },
     {
       "skill_name": "design-md",
@@ -683,7 +714,8 @@
         "fallback_for_tools": [],
         "requires_tools": [],
         "session_platforms": []
-      }
+      },
+      "requires_apps": []
     },
     {
       "skill_name": "humanizer",
@@ -701,7 +733,8 @@
         "fallback_for_tools": [],
         "requires_tools": [],
         "session_platforms": []
-      }
+      },
+      "requires_apps": []
     },
     {
       "skill_name": "manim-video",
@@ -719,7 +752,8 @@
         "fallback_for_tools": [],
         "requires_tools": [],
         "session_platforms": []
-      }
+      },
+      "requires_apps": []
     },
     {
       "skill_name": "p5js",
@@ -737,7 +771,8 @@
         "fallback_for_tools": [],
         "requires_tools": [],
         "session_platforms": []
-      }
+      },
+      "requires_apps": []
     },
     {
       "skill_name": "popular-web-designs",
@@ -755,7 +790,8 @@
         "fallback_for_tools": [],
         "requires_tools": [],
         "session_platforms": []
-      }
+      },
+      "requires_apps": []
     },
     {
       "skill_name": "songwriting-and-ai-music",
@@ -773,7 +809,8 @@
         "fallback_for_tools": [],
         "requires_tools": [],
         "session_platforms": []
-      }
+      },
+      "requires_apps": []
     },
     {
       "skill_name": "sdlc-review",
@@ -793,7 +830,8 @@
         "fallback_for_tools": [],
         "requires_tools": [],
         "session_platforms": []
-      }
+      },
+      "requires_apps": []
     },
     {
       "skill_name": "email-inbox-triage",
@@ -811,7 +849,8 @@
         "fallback_for_tools": [],
         "requires_tools": [],
         "session_platforms": []
-      }
+      },
+      "requires_apps": []
     },
     {
       "skill_name": "himalaya",
@@ -829,7 +868,8 @@
         "fallback_for_tools": [],
         "requires_tools": [],
         "session_platforms": []
-      }
+      },
+      "requires_apps": []
     },
     {
       "skill_name": "git-workflow",
@@ -843,7 +883,8 @@
         "fallback_for_tools": [],
         "requires_tools": [],
         "session_platforms": []
-      }
+      },
+      "requires_apps": []
     },
     {
       "skill_name": "improve",
@@ -857,7 +898,8 @@
         "fallback_for_tools": [],
         "requires_tools": [],
         "session_platforms": []
-      }
+      },
+      "requires_apps": []
     },
     {
       "skill_name": "gif-search",
@@ -875,7 +917,8 @@
         "fallback_for_tools": [],
         "requires_tools": [],
         "session_platforms": []
-      }
+      },
+      "requires_apps": []
     },
     {
       "skill_name": "songsee",
@@ -893,7 +936,8 @@
         "fallback_for_tools": [],
         "requires_tools": [],
         "session_platforms": []
-      }
+      },
+      "requires_apps": []
     },
     {
       "skill_name": "youtube-content",
@@ -911,7 +955,8 @@
         "fallback_for_tools": [],
         "requires_tools": [],
         "session_platforms": []
-      }
+      },
+      "requires_apps": []
     },
     {
       "skill_name": "obsidian",
@@ -929,7 +974,8 @@
         "fallback_for_tools": [],
         "requires_tools": [],
         "session_platforms": []
-      }
+      },
+      "requires_apps": []
     },
     {
       "skill_name": "airtable",
@@ -947,7 +993,8 @@
         "fallback_for_tools": [],
         "requires_tools": [],
         "session_platforms": []
-      }
+      },
+      "requires_apps": []
     },
     {
       "skill_name": "box",
@@ -965,7 +1012,8 @@
         "fallback_for_tools": [],
         "requires_tools": [],
         "session_platforms": []
-      }
+      },
+      "requires_apps": []
     },
     {
       "skill_name": "collective-wisdom-install",
@@ -983,7 +1031,8 @@
         "fallback_for_tools": [],
         "requires_tools": [],
         "session_platforms": []
-      }
+      },
+      "requires_apps": []
     },
     {
       "skill_name": "document-to-action-items",
@@ -1001,7 +1050,8 @@
         "fallback_for_tools": [],
         "requires_tools": [],
         "session_platforms": []
-      }
+      },
+      "requires_apps": []
     },
     {
       "skill_name": "docx",
@@ -1019,7 +1069,8 @@
         "fallback_for_tools": [],
         "requires_tools": [],
         "session_platforms": []
-      }
+      },
+      "requires_apps": []
     },
     {
       "skill_name": "google-workspace",
@@ -1037,7 +1088,8 @@
         "fallback_for_tools": [],
         "requires_tools": [],
         "session_platforms": []
-      }
+      },
+      "requires_apps": []
     },
     {
       "skill_name": "maps",
@@ -1057,7 +1109,8 @@
         "fallback_for_tools": [],
         "requires_tools": [],
         "session_platforms": []
-      }
+      },
+      "requires_apps": []
     },
     {
       "skill_name": "meeting-action-items",
@@ -1075,7 +1128,8 @@
         "fallback_for_tools": [],
         "requires_tools": [],
         "session_platforms": []
-      }
+      },
+      "requires_apps": []
     },
     {
       "skill_name": "notion",
@@ -1093,7 +1147,8 @@
         "fallback_for_tools": [],
         "requires_tools": [],
         "session_platforms": []
-      }
+      },
+      "requires_apps": []
     },
     {
       "skill_name": "pdf",
@@ -1111,7 +1166,8 @@
         "fallback_for_tools": [],
         "requires_tools": [],
         "session_platforms": []
-      }
+      },
+      "requires_apps": []
     },
     {
       "skill_name": "powerpoint",
@@ -1129,7 +1185,8 @@
         "fallback_for_tools": [],
         "requires_tools": [],
         "session_platforms": []
-      }
+      },
+      "requires_apps": []
     },
     {
       "skill_name": "product-price-monitor",
@@ -1147,7 +1204,8 @@
         "fallback_for_tools": [],
         "requires_tools": [],
         "session_platforms": []
-      }
+      },
+      "requires_apps": []
     },
     {
       "skill_name": "teams-meeting-pipeline",
@@ -1168,7 +1226,8 @@
           "teams",
           "cron"
         ]
-      }
+      },
+      "requires_apps": []
     },
     {
       "skill_name": "weekly-review-planning",
@@ -1186,7 +1245,8 @@
         "fallback_for_tools": [],
         "requires_tools": [],
         "session_platforms": []
-      }
+      },
+      "requires_apps": []
     },
     {
       "skill_name": "xlsx",
@@ -1204,7 +1264,8 @@
         "fallback_for_tools": [],
         "requires_tools": [],
         "session_platforms": []
-      }
+      },
+      "requires_apps": []
     },
     {
       "skill_name": "arxiv",
@@ -1222,7 +1283,8 @@
         "fallback_for_tools": [],
         "requires_tools": [],
         "session_platforms": []
-      }
+      },
+      "requires_apps": []
     },
     {
       "skill_name": "competitor-news-monitor",
@@ -1240,7 +1302,8 @@
         "fallback_for_tools": [],
         "requires_tools": [],
         "session_platforms": []
-      }
+      },
+      "requires_apps": []
     },
     {
       "skill_name": "grounded-citations",
@@ -1258,7 +1321,8 @@
         "fallback_for_tools": [],
         "requires_tools": [],
         "session_platforms": []
-      }
+      },
+      "requires_apps": []
     },
     {
       "skill_name": "llm-wiki",
@@ -1276,7 +1340,8 @@
         "fallback_for_tools": [],
         "requires_tools": [],
         "session_platforms": []
-      }
+      },
+      "requires_apps": []
     },
     {
       "skill_name": "rss-feeds",
@@ -1294,7 +1359,8 @@
         "fallback_for_tools": [],
         "requires_tools": [],
         "session_platforms": []
-      }
+      },
+      "requires_apps": []
     },
     {
       "skill_name": "reddit-reading",
@@ -1312,7 +1378,8 @@
         "fallback_for_tools": [],
         "requires_tools": [],
         "session_platforms": []
-      }
+      },
+      "requires_apps": []
     },
     {
       "skill_name": "xurl",
@@ -1329,7 +1396,8 @@
         "fallback_for_tools": [],
         "requires_tools": [],
         "session_platforms": []
-      }
+      },
+      "requires_apps": []
     },
     {
       "skill_name": "codebase-inspection",
@@ -1347,7 +1415,8 @@
         "fallback_for_tools": [],
         "requires_tools": [],
         "session_platforms": []
-      }
+      },
+      "requires_apps": []
     },
     {
       "skill_name": "dogfood",
@@ -1365,7 +1434,8 @@
         "fallback_for_tools": [],
         "requires_tools": [],
         "session_platforms": []
-      }
+      },
+      "requires_apps": []
     },
     {
       "skill_name": "github",
@@ -1383,7 +1453,8 @@
         "fallback_for_tools": [],
         "requires_tools": [],
         "session_platforms": []
-      }
+      },
+      "requires_apps": []
     },
     {
       "skill_name": "hermes-agent-skill-authoring",
@@ -1401,7 +1472,23 @@
         "fallback_for_tools": [],
         "requires_tools": [],
         "session_platforms": []
-      }
+      },
+      "requires_apps": []
+    },
+    {
+      "skill_name": "improve-workflows",
+      "category": "software-development",
+      "frontmatter_name": "improve-workflows",
+      "description": "Audit plan-writing and issue registration workflows.",
+      "platforms": [],
+      "conditions": {
+        "fallback_for_toolsets": [],
+        "requires_toolsets": [],
+        "fallback_for_tools": [],
+        "requires_tools": [],
+        "session_platforms": []
+      },
+      "requires_apps": []
     },
     {
       "skill_name": "inspecting-hermes-desktop-dom",
@@ -1419,7 +1506,23 @@
         "fallback_for_tools": [],
         "requires_tools": [],
         "session_platforms": []
-      }
+      },
+      "requires_apps": []
+    },
+    {
+      "skill_name": "laravel-patterns",
+      "category": "software-development",
+      "frontmatter_name": "laravel-patterns",
+      "description": "Laravel pitfalls: model events, cache batching, factories.",
+      "platforms": [],
+      "conditions": {
+        "fallback_for_toolsets": [],
+        "requires_toolsets": [],
+        "fallback_for_tools": [],
+        "requires_tools": [],
+        "session_platforms": []
+      },
+      "requires_apps": []
     },
     {
       "skill_name": "node-inspect-debugger",
@@ -1437,7 +1540,8 @@
         "fallback_for_tools": [],
         "requires_tools": [],
         "session_platforms": []
-      }
+      },
+      "requires_apps": []
     },
     {
       "skill_name": "python-debugpy",
@@ -1454,7 +1558,23 @@
         "fallback_for_tools": [],
         "requires_tools": [],
         "session_platforms": []
-      }
+      },
+      "requires_apps": []
+    },
+    {
+      "skill_name": "read-the-damn-docs",
+      "category": "software-development",
+      "frontmatter_name": "read-the-damn-docs",
+      "description": "Read official docs before using third-party APIs or libs.",
+      "platforms": [],
+      "conditions": {
+        "fallback_for_toolsets": [],
+        "requires_toolsets": [],
+        "fallback_for_tools": [],
+        "requires_tools": [],
+        "session_platforms": []
+      },
+      "requires_apps": []
     },
     {
       "skill_name": "requesting-code-review",
@@ -1472,7 +1592,8 @@
         "fallback_for_tools": [],
         "requires_tools": [],
         "session_platforms": []
-      }
+      },
+      "requires_apps": []
     },
     {
       "skill_name": "simplify-code",
@@ -1490,7 +1611,8 @@
         "fallback_for_tools": [],
         "requires_tools": [],
         "session_platforms": []
-      }
+      },
+      "requires_apps": []
     },
     {
       "skill_name": "spike",
@@ -1508,7 +1630,8 @@
         "fallback_for_tools": [],
         "requires_tools": [],
         "session_platforms": []
-      }
+      },
+      "requires_apps": []
     },
     {
       "skill_name": "systematic-debugging",
@@ -1526,7 +1649,8 @@
         "fallback_for_tools": [],
         "requires_tools": [],
         "session_platforms": []
-      }
+      },
+      "requires_apps": []
     },
     {
       "skill_name": "test-driven-development",
@@ -1544,7 +1668,8 @@
         "fallback_for_tools": [],
         "requires_tools": [],
         "session_platforms": []
-      }
+      },
+      "requires_apps": []
     },
     {
       "skill_name": "blocked-page-recovery",
@@ -1562,7 +1687,8 @@
         "fallback_for_tools": [],
         "requires_tools": [],
         "session_platforms": []
-      }
+      },
+      "requires_apps": []
     }
   ],
   "category_descriptions": {
