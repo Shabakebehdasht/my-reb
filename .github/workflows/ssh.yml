@@ -1,8 +1,8 @@
-name: sydney
+name: rebecca
 
 on:
   schedule:
-    - cron: '30 2,8,14,20 * * *'  # ساعت ۰۰:۰۰، ۰۶:۰۰، ۱۲:۰۰، ۱۸:۰۰ به وقت تهران (UTC+3:30)
+    - cron: '30 1,7,13,19 * * *'  # ساعت ۰۰:۰۰، ۰۶:۰۰، ۱۲:۰۰، ۱۸:۰۰ به وقت تهران (UTC+3:30)
   workflow_dispatch:
 
 jobs:
@@ -10,8 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 360
     env:
-      REPO_ORIGIN: https://github.com/haileen5/h-dashboard.git
-      WF_NAME: sydney
+      REPO_ORIGIN: https://github.com/Shabakebehdasht/h-dashboard.git
+      WF_NAME: rebecca
 
     steps:
       - name: 1. Checkout Repository
@@ -111,8 +111,8 @@ jobs:
           cd h-dashboard
 
           # Set git identity for commits
-          git config user.name "haileen5"
-          git config user.email "haileen5@users.noreply.github.com"
+          git config user.name "Shabakebehdasht"
+          git config user.email "Shabakebehdasht@users.noreply.github.com"
 
           # Fetch latest origin/beta
           git fetch origin beta
@@ -301,7 +301,7 @@ jobs:
                 && echo '✅ Seed result sent to Telegram' \
                 || echo '⚠️ Seed result failed to send'
             else
-              hermes send --to telegram "sydney online and ready." \
+              hermes send --to telegram "rebecca online and ready." \
                 && echo '✅ Welcome message sent to Telegram' \
                 || echo '⚠️ Welcome message failed to send'
             fi
@@ -322,16 +322,16 @@ jobs:
             echo "[$i/330] Server is active (SSH + Laravel on port 8000)..."
           done
 
-      - name: 16. Sync hermes state & 9router data back to my-tail
+      - name: 16. Sync hermes state & 9router data back to my-reb
         if: always()
         env:
           GH_TOKEN: ${{ secrets.MY_PAT }}
         run: |
           cd "${GITHUB_WORKSPACE:-.}"
-          git config user.name "haileen5"
-          git config user.email "haileen5@users.noreply.github.com"
+          git config user.name "Shabakebehdasht"
+          git config user.email "Shabakebehdasht@users.noreply.github.com"
           # Authenticate with PAT for push
-          git remote set-url origin "https://x-access-token:${GH_TOKEN}@github.com/haileen5/my-tail.git"
+          git remote set-url origin "https://x-access-token:${GH_TOKEN}@github.com/Shabakebehdasht/my-reb.git"
 
           H=/home/runner/.hermes
           HDEST=hermes
@@ -359,11 +359,11 @@ jobs:
             echo 'ℹ️ No changes to commit'
           else
             git add hermes/ 9router/ 2>/dev/null || true
-            git commit -m "Sync hermes state & 9router data from sydney instance"
+            git commit -m "Sync hermes state & 9router data from rebecca instance"
             # Pull first in case another run pushed before us
             git pull --rebase origin "${{ github.ref_name }}" || true
             git push origin "${{ github.ref_name }}" || echo '⚠️ Push failed — changes saved locally'
-            echo '✅ Hermes & 9router data synced to my-tail'
+            echo '✅ Hermes & 9router data synced to my-reb'
           fi
 
       - name: 17. Tailscale Logout (cleanup on shutdown)
