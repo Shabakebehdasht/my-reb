@@ -1,1 +1,1 @@
-
+h-dashboard project: branch=rebecca, origin=Shabakebehdasht/h-dashboard.git, upstream=asgarimehdi/h-dashboard.git. MCP tools: Laravel Boost, Context7, GitHub MCP (26 tools) all active. CodeGraph CLI installed (@colbymchenry/codegraph v1.6.0), wired to Hermes, indexed h-dashboard (7925 nodes). CodeGraph MCP tools need session restart to appear. read-the-damn-docs skill installed. shadcn/improve skill loaded (audit-only, never edit code directly). User wants PRs from rebecca → upstream/beta.

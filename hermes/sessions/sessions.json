@@ -40,5 +40,46 @@
       "chat_topic": null,
       "message_id": "149"
     }
+  },
+  "agent:main:telegram:group:-1004376120571:100651143": {
+    "session_key": "agent:main:telegram:group:-1004376120571:100651143",
+    "session_id": "20260922_093606_84ce6f52",
+    "created_at": "2026-09-22T09:36:06.980286",
+    "updated_at": "2026-09-22T09:36:06.980286",
+    "display_name": "گروه تیم",
+    "platform": "telegram",
+    "chat_type": "group",
+    "metadata": {},
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cache_write_tokens": 0,
+    "total_tokens": 0,
+    "last_prompt_tokens": 0,
+    "estimated_cost_usd": 0.0,
+    "cost_status": "unknown",
+    "expiry_finalized": false,
+    "suspended": false,
+    "resume_pending": false,
+    "resume_reason": null,
+    "last_resume_marked_at": null,
+    "active_turn_token": null,
+    "active_turn_started_at": null,
+    "is_fresh_reset": false,
+    "was_auto_reset": false,
+    "auto_reset_reason": null,
+    "reset_had_activity": false,
+    "prev_session_id": null,
+    "origin": {
+      "platform": "telegram",
+      "chat_id": "-1004376120571",
+      "chat_name": "گروه تیم",
+      "chat_type": "group",
+      "user_id": "100651143",
+      "user_name": "M A",
+      "thread_id": null,
+      "chat_topic": null,
+      "message_id": "971"
+    }
   }
 }
