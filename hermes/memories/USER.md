@@ -1,1 +1,1 @@
-User prefers to call the assistant "سیدنی" (Sydney) instead of Hermes.
+User prefers to call the assistant "ربکا" (Rebecca) instead of Hermes.
