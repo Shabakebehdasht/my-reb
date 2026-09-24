@@ -2,7 +2,7 @@ name: rebecca
 
 on:
   schedule:
-    - cron: '0 */6 * * *' 
+    - cron: '0 */7 * * *' 
   workflow_dispatch:
 
 jobs:
@@ -314,11 +314,11 @@ jobs:
           nohup php artisan serve --host=0.0.0.0 > /dev/null 2>&1 &
           echo '✅ Laravel server started on port 8000'
 
-      - name: 15. Server Keep-Alive (5h 30m)
+      - name: 15. Server Keep-Alive (5h 57m)
         run: |
-          for i in {1..330}; do
+          for i in {1..357}; do
             sleep 60
-            echo "[$i/330] Server is active (SSH + Laravel on port 8000)..."
+            echo "[$i/357] Server is active (SSH + Laravel on port 8000)..."
           done
 
       - name: 16. Sync hermes state & 9router data back to my-reb
