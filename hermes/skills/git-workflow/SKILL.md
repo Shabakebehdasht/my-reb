@@ -20,6 +20,34 @@ Pitfalls and procedures for everyday git operations that fall outside standard
 - Always check `git status` and `git remote -v` before staging or pushing.
 - Configure per-repo identity before first commit if global config is absent.
 - Never assume a branch name — read it from `git branch --show-current`.
+- Inspect `git status --short` and the relevant diff at startup. Treat pre-existing changes as user-owned: do not stage, discard, or claim them as task work.
+- Verify the current branch's upstream is the remote branch with the **same name**. A status line such as `branch...origin/beta` proves synchronization with the wrong branch, not delivery of the current branch.
+
+## Dirty Startup and Tracking Checks
+
+```bash
+branch=$(git branch --show-current)
+git status --short
+git branch -vv
+git config --get "branch.$branch.remote"
+git config --get "branch.$branch.merge"
+```
+
+If the checkout was seeded with tracking from another branch, push explicitly first and then repair only the local tracking config:
+
+```bash
+remote=$(git config --get "branch.$branch.remote")
+git push "$remote" "HEAD:refs/heads/$branch"
+git config --local "branch.$branch.remote" "$remote"
+git config --local "branch.$branch.merge" "refs/heads/$branch"
+```
+
+Do not change remote URLs merely to alter branch synchronization. Verify delivery with both hashes:
+
+```bash
+git rev-parse HEAD
+git rev-parse "refs/remotes/$remote/$branch"
+```
 
 ## Pitfalls
 
