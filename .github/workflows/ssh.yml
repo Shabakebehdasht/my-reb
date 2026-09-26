@@ -2,7 +2,7 @@ name: rebecca
 
 on:
   schedule:
-    - cron: '0 */7 * * *' 
+    - cron: '0 */6 * * *'
   workflow_dispatch:
 
 jobs:
@@ -47,6 +47,19 @@ jobs:
           echo 'export INITIAL_PASSWORD="${{ secrets.RUNNER_PASSWORD }}"' >> ~/.bashrc
           echo 'export INITIAL_PASSWORD="${{ secrets.RUNNER_PASSWORD }}"' >> ~/.profile
           echo 'INITIAL_PASSWORD="${{ secrets.RUNNER_PASSWORD }}"' | sudo tee -a /etc/environment
+
+          # CodeGraph CLI — installed here, the first step where npm is on PATH.
+          # ~/.hermes/config.yaml (restored later) runs
+          # ~/.npm-global/bin/codegraph serve --mcp, so this must land before
+          # the gateway boots. The /usr/local/bin symlink keeps the plain
+          # `codegraph` command available in every shell.
+          npm install -g @colbymchenry/codegraph
+          if [ -x ~/.npm-global/bin/codegraph ]; then
+            sudo ln -sf ~/.npm-global/bin/codegraph /usr/local/bin/codegraph
+            echo "✅ CodeGraph installed: $(/usr/local/bin/codegraph --version)"
+          else
+            echo '⚠️ CodeGraph binary not found after installation'
+          fi
 
       - name: 4. Install PHP 8.5 & Composer (Laravel + pgsql + redis)
         run: |
@@ -122,6 +135,17 @@ jobs:
 
           cp .env.example.pgsql .env
 
+          # .hermes.md is not wanted — AGENTS.md is the authoritative instruction
+          # file. Drop it from the checkout and from the index (without touching
+          # beta), then exclude it so `git status` stays clean.
+          if git ls-files --error-unmatch .hermes.md >/dev/null 2>&1; then
+            git rm -q --cached .hermes.md
+          fi
+          rm -f .hermes.md
+          grep -qxF '.hermes.md' .git/info/exclude 2>/dev/null \
+            || echo '.hermes.md' >> .git/info/exclude
+          echo '✅ .hermes.md removed from the checkout and the index'
+
       - name: 8. Start Docker Compose (PostgreSQL)
         run: |
           cd /home/runner/h-dashboard
@@ -142,6 +166,17 @@ jobs:
           cd /home/runner/h-dashboard
           npm run build
           echo '✅ Frontend assets built'
+
+      - name: 10b. Index h-dashboard with CodeGraph
+        run: |
+          cd /home/runner/h-dashboard
+          if [ -x /usr/local/bin/codegraph ]; then
+            CODEGRAPH_TELEMETRY=0 codegraph init .
+            CODEGRAPH_TELEMETRY=0 codegraph status .
+            echo '✅ CodeGraph index built for h-dashboard'
+          else
+            echo '⚠️ CodeGraph not on PATH — skipping index'
+          fi
 
       - name: 11. Install 9router globally and create symlink
         run: |
@@ -222,6 +257,10 @@ jobs:
 
           # 4. Install MCP servers + the shadcn/improve skill.
           #    4a. Laravel Boost MCP (php artisan boost:mcp — provided by laravel/boost)
+          #        Must run inside h-dashboard: `composer require` in the workflow's
+          #        working dir (the my-reb workspace) would install the package into
+          #        the wrong project and litter composer.json/vendor/ at its root.
+          cd /home/runner/h-dashboard
           composer require laravel/boost --no-interaction 2>&1 | tail -3 || true
           if [ -f /home/runner/h-dashboard/artisan ]; then
             php artisan boost:update 2>/dev/null || true
@@ -274,26 +313,21 @@ jobs:
           fi
           echo '✅ Hermes gateway launch attempted (logs: /tmp/hermes-gateway.log)'
 
-          # 8. Seed instructions -> system prompt + real execution + send result to Telegram.
+          # 8. Seed instructions -> real execution + send result to Telegram.
           #    `hermes send` alone NEVER executes — it only relays text.
-          #    So: (a) write seed into h-dashboard/.hermes.md (system prompt),
-          #    (b) run real `hermes chat -q` warmup, (c) send the RESULT to Telegram.
+          #    So: (a) run a real `hermes chat -q` warmup, (b) send the RESULT.
+          #    No .hermes.md is written: AGENTS.md is the authoritative
+          #    instruction file for h-dashboard and .hermes.md is not wanted.
           SEED_FILE="${GITHUB_WORKSPACE:-.}/hermes/seed-message.txt"
           HD_DIR=/home/runner/h-dashboard
           if [ -f "$SEED_FILE" ]; then
             sleep 3
-            # 8a. Persistent instructions -> project context (system prompt).
-            {
-              echo '# h-dashboard instance rules (seeded at boot)'
-              echo ''
-              cat "$SEED_FILE"
-            } > "$HD_DIR/.hermes.md"
-            echo '✅ Seed instructions written to h-dashboard/.hermes.md (system prompt)'
-            # 8b. Real agent execution — capture output to send to Telegram.
+            rm -f "$HD_DIR/.hermes.md"
+            # 8a. Real agent execution — capture output to send to Telegram.
             SEED_RESULT=$(cd "$HD_DIR" && hermes chat -q "$(cat "$SEED_FILE")" 2>/tmp/seed-warmup.log) \
               && echo '✅ Seed executed via hermes chat' \
               || echo '⚠️ Seed execution failed (see /tmp/seed-warmup.log)'
-            # 8c. Send the execution result (not the raw seed) to Telegram.
+            # 8b. Send the execution result (not the raw seed) to Telegram.
             if [ -n "$SEED_RESULT" ]; then
               echo "$SEED_RESULT" > /tmp/seed-result.txt
               hermes send --to telegram --file /tmp/seed-result.txt \
@@ -314,11 +348,11 @@ jobs:
           nohup php artisan serve --host=0.0.0.0 > /dev/null 2>&1 &
           echo '✅ Laravel server started on port 8000'
 
-      - name: 15. Server Keep-Alive (5h 57m)
+      - name: 15. Server Keep-Alive (5h 30m)
         run: |
-          for i in {1..357}; do
+          for i in {1..330}; do
             sleep 60
-            echo "[$i/357] Server is active (SSH + Laravel on port 8000)..."
+            echo "[$i/330] Server is active (SSH + Laravel on port 8000)..."
           done
 
       - name: 16. Sync hermes state & 9router data back to my-reb
