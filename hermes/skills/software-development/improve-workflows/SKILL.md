@@ -57,6 +57,40 @@ Subagents over-report. Three failure classes to check:
 
 Always open the cited code yourself before including a finding in the vetted table. Downgrade or reject accordingly.
 
+## Writing a plan the executor cannot misread
+
+A plan containing a method that does not exist is worse than a plan with a gap: the executor writes to the invented name and the failure surfaces far from the plan. **Every identifier in a plan must come from a grep or a read in the same session.**
+
+### Verify every symbol before you write it
+
+Before a plan body references a class, method, helper, or constant, confirm it exists:
+
+```bash
+grep -n 'public function' app/Services/YourService.php      # signature, not just the name
+grep -rn 'foldedTerm' app/ resources/ | head                 # how callers reach it
+```
+
+Assume nothing from memory of the framework or from a similarly named helper. Specific traps that each broke a plan in practice:
+
+- **A trait's static methods are not callable as `Trait::method()`.** `PersianNormalizer` is a `trait`; the callers do `use PersianNormalizer;` then `self::foldedTerm(...)`. Writing `PersianNormalizer::foldedTerm(...)` compiles into a fatal.
+- **Helper namespaces, not just names.** A method may exist on the model but as a differently-named public function. Check the real name.
+- **Dependency check before inventing syntax.** A planned `d3.scaleQuantize(...)` in a project whose only frontend runtime dependency is Leaflet-by-CDN means the plan ships a plan that cannot run. Grep `package.json` and the view's `<script src>` tags.
+- **Test-helper methods must come from the shared trait.** If a plan invents `$this->tokenFor(...)` because that reads nicely, the executor discovers at run time that the real helper is `createApiToken($user, $abilities)` plus a `forgetGuards()` call. Read `tests/Support/Concerns/` first.
+
+### Fix in place, never ship a known-wrong snippet
+
+When a snippet in a plan turns out wrong, patch that snippet. Do not leave it and append a note — a "remove the line above" instruction is an executor trap, and a plan that says "…actually use X" reads as two half-plans.
+
+The cheap order that catches most of this: write one task, then immediately grep every symbol it introduced before writing the next task. Fix at the point of discovery, where the surrounding context is still in hand.
+
+### Do not let a plan assert a count it did not measure
+
+A plan that says "the suite has N tests and must stay green" launders a number from a docs file. Either measure it in the session or phrase the gate relationally ("the count is at least the baseline plus the new tests").
+
+## A plan's own test suite is part of the plan
+
+A TDD-shaped plan is only as good as the assertions that pin the risky inputs. Before shipping, list the input classes the spec implies but no happy-path test touches — cross-branch visibility, cycles, non-ASCII text, SQL metacharacters, duplicate submissions — and require each to be pinned by a named test inside the task that owns that code. Put the list in the plan header once, so the executor sees it while writing the tasks, and attach each line to a task as you write it.
+
 ## Plans Directory Structure
 
 ```

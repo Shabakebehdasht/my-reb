@@ -1,4 +1,56 @@
 {
-  "jobs": [],
-  "updated_at": "2026-09-22T00:54:41.127529+00:00"
+  "jobs": [
+    {
+      "id": "447863f4f351",
+      "name": "730 second comment",
+      "prompt": "Write a short, independent reply comment (max 1200 characters, written in Persian) and post it to discussion 730 in the asgarimehdi/h-dashboard repo.\n\nSTEP 1 - read the latest comment:\ncd /home/runner/h-dashboard && gh api graphql -f query='{ repository(owner:\"asgarimehdi\", name:\"h-dashboard\") { discussion(number: 730) { comments(last: 1) { nodes { author { login } body createdAt } } } }'\n\nSTEP 2 - write your own opinion. Content requirements:\n- Explicitly address the author by the login name from the query result.\n- Pick exactly ONE point and verify it yourself first, by reading the actual code in /home/runner/h-dashboard or by running a read-only command (grep, cat, git log, git show, gh api). Report the real result: a number, a file path, a line number. Do NOT write any claim you did not personally verify.\n- If you agree, say what it completes or sharpens. If you disagree, give the concrete reason.\n- If your reply builds on your earlier comment (author Shabakebehdasht), reference it and say which part you are confirming or correcting.\n- Do NOT repeat these four points, they are already in your earlier comment: running full PHPStan in pre-push, a heuristic to select relevant tests, the pre-commit hook not being installed, and dropping band 3 for lack of evidence.\n- No pleasantries, no \"thanks for the feedback\" opener. Go straight to the point.\n- No emoji. Technical and direct tone. Do not use the Persian ZWNJ character (U+200C) anywhere in your text.\n\nSTEP 3 - write the text with write_file to /home/runner/.hermes/cache/scratch/c730c.md, then post it. First get the node id:\n\ngh api graphql -f query='{ repository(owner:\"asgarimehdi\", name:\"h-dashboard\") { discussion(number: 730) { id } } }'\n\nThen use the returned id value (it starts with D_):\n\ngh api graphql -f query='mutation($discussionId: ID!, $body: String!) { addDiscussionComment(input: {discussionId: $discussionId, body: $body}) { comment { url } } }' -f discussionId=\"ID_FROM_PREVIOUS_COMMAND\" -F body=@/home/runner/.hermes/cache/scratch/c730c.md\n\nNote: discussionId must be a string, not a number. A bare number is rejected as a global id.\n\nSTEP 4 - output only the URL of the posted comment as your final answer.\n\nIf there is no comment to review, do nothing and output exactly: no comment to review.",
+      "skills": [],
+      "skill": null,
+      "model": null,
+      "provider": null,
+      "base_url": null,
+      "script": null,
+      "no_agent": false,
+      "monitor_script": null,
+      "monitor_url": null,
+      "monitor_state": null,
+      "context_from": null,
+      "schedule": {
+        "kind": "once",
+        "run_at": "2026-09-28T21:40:33.102029+00:00",
+        "display": "once in 10m"
+      },
+      "schedule_display": "once in 10m",
+      "repeat": {
+        "times": 1,
+        "completed": 1
+      },
+      "enabled": false,
+      "state": "completed",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-09-28T21:30:33.102096+00:00",
+      "next_run_at": null,
+      "last_run_at": "2026-09-28T21:43:09.196383+00:00",
+      "last_status": "ok",
+      "last_error": null,
+      "last_delivery_error": null,
+      "last_delivery_unverified": null,
+      "failure_streak": 0,
+      "deliver": "local",
+      "origin": {
+        "platform": "telegram",
+        "chat_id": "-1004376120571",
+        "chat_name": "گروه تیم",
+        "thread_id": null,
+        "user_id": "100651143",
+        "scope_id": null
+      },
+      "enabled_toolsets": null,
+      "workdir": "/home/runner/h-dashboard",
+      "run_claim": null,
+      "fire_claim": null
+    }
+  ],
+  "updated_at": "2026-09-28T21:43:09.200267+00:00"
 }
