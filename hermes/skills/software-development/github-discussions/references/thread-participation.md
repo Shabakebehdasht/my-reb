@@ -74,3 +74,24 @@ Ranked, strongest first:
 | Restatement / "I agree" | Cut it. The thread already says it. |
 
 Before asserting a mechanism, find *where* the code runs relative to the thing you think guards it. Ordering is invisible in a bug report and decides the fix.
+
+## Reviewing other people's work in a discussion
+
+When a thread asks for your opinion on a PR, the answer has to come from the diff, not from the description. Pull the actual code and check each claim:
+
+```bash
+gh pr diff N > /tmp/pr-N.diff          # large: write to a file, page through it
+gh pr diff N --name-only               # scope first
+```
+
+Write a scratch file per reply and publish in a separate call, as above. Reply in the discussion, not the PR, when the thread asked for the opinion there.
+
+The contributions that actually change someone's decision are the ones nobody in the thread checked:
+
+- **Cross-PR duplication.** Dump the file lists of every sibling PR and intersect them. A PR titled as tooling work can silently carry another PR's whole feature; the duplicate lives in the diff, never in the title. Say plainly which PR is the superset and recommend closing one.
+- **Same file ≠ conflict.** Two PRs editing one file merge cleanly when they touch different functions. Report hunk overlap, not file overlap, or you cry wolf.
+- **Honest self-assessment.** When reviewing your own prior work in the same thread, state which of the two is technically better and why, even if the other is yours. Admitting your version is the weaker of two valid designs is what makes the rest of the review trustworthy.
+- **The root cause vs the reported symptom.** If a PR claims to fix a root cause but the underlying config is untouched, say which part is diagnosed and which is only detected.
+- **A latent regression the author did not test.** Check whether a new Postgres-only construct lands in a file that has a driver branch, or whether a cache key built from an empty collection collides across users.
+
+Answer every question the thread actually asked, in the thread's language, and end with the decision that is still the user's to make rather than resolving it for them.

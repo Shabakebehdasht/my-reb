@@ -49,6 +49,21 @@ git rev-parse HEAD
 git rev-parse "refs/remotes/$remote/$branch"
 ```
 
+## Isolating a Change Onto Its Own Branch
+
+When a work branch carries unrelated commits (dependency bumps, doc plans, another issue's work) and the user wants a PR containing only the fix, do not open the PR from that branch — every unrelated commit rides along.
+
+**Rule:** branch from the upstream default, then cherry-pick just the fix, so the PR diff is provably scoped.
+
+```bash
+git fetch https://github.com/<upstream>/<repo>.git <default>:refs/remotes/canonical/<default>
+git checkout -b <issue-slug> canonical/<default>
+git cherry-pick <fix-sha>
+git diff canonical/<default>..HEAD --stat   # proves scope
+```
+
+`git diff <base>..HEAD --stat` is the scope check — read it before pushing, and confirm no unrelated file appears. A fetch by URL into a private ref keeps remote configuration untouched, which matters when the remotes are managed for you. Re-run the targeted tests on the isolated branch; a cherry-pick can conflict with a different base.
+
 ## Pitfalls
 
 ### Nested `.git` directories when copying content
@@ -74,7 +89,19 @@ git add target/inside/repo/
 git commit -m "Add dir contents (fix nested repo)"
 ```
 
-### Missing git identity on fresh clones
+### Never guess or mutate a secret you only saw masked
+
+A redacted/masked value in a config file or terminal output means you do **not** have the credential — you have a placeholder. Never run a credential-mutating statement (`ALTER USER ... PASSWORD`, `redis CONFIG SET`, key rotation) with a value you inferred, guessed, or copied from documentation: it silently replaces a working secret with a wrong one and locks out every service using it, and the original is unrecoverable from the masked view.
+
+**Rule:** if you must change a credential, read the real value from a file programmatically without printing it, and verify connectivity immediately afterwards. If you have already broken it, restore from the same file and re-verify with a real connection probe (`db:show`, a ping, a test run) — not by re-reading the masked output.
+
+```bash
+PW=$(grep -E '^DB_PASSWORD=' .env | head -1 | cut -d= -f2-)
+printf "ALTER USER u WITH PASSWORD '%s';\n" "$PW" | docker exec -i pg psql -U u -d postgres -q
+php artisan db:show     # proof it works again
+```
+
+A one-off "let me just set it to something I remember" is how a working dev environment becomes a five-minute outage with no undo.
 
 New clones may lack both global and per-repo `user.name`/`user.email`.
 Commits fail with `empty ident name`.
