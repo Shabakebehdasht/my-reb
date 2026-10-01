@@ -48,9 +48,9 @@ Discussion threads only. Issues, PRs, reviews, releases, and repo admin belong t
 
 "Add your take to each active discussion" is two phases, and the second is where the value is.
 
-1. **Read the whole thread before writing.** Fetch the discussion list *including* `body` and every comment, then read them. Commenting from titles alone produces an answer to a question nobody asked.
+1. **Read the whole thread before writing — then re-read immediately before posting.** Fetch the discussion list *including* `body` and every comment, then read them. Commenting from titles alone produces an answer to a question nobody asked. Re-fetch right before the post: another participant can land a comment in the minutes between your first read and your write, and your comment is then judged against theirs, not read on its own. If one appeared, fold its points in or deliberately go somewhere it did not.
 2. **Re-verify every load-bearing claim against the code before you assert or refute it.** A thread's own analysis is a claim, not a finding. Grep the cited line, check the flag, confirm the route exists. Other participants are frequently right about the symptom and wrong about the mechanism — that gap is where your contribution lives.
-3. **Contribute what the thread lacks, not agreement.** Ranked by value: a fact nobody checked; a mechanism correction ("the failure happens *before* the cache, so a guard inside the cached callback never runs"); a missing constraint ("a config file for flaky tests should be a trait, because a blocklist grows and one day it needlessly halves the suite"); a disagreement with a reason. Pure restatement is noise.
+3. **Contribute what the thread lacks, not agreement.** Open with the measured basis in one line — the window anchor, the counts, the diffstat — so the reader can audit your scope before reading a single claim. Then rank the body by value: a fact nobody checked; a mechanism correction ("the failure happens *before* the cache, so a guard inside the cached callback never runs"); a missing constraint ("a config file for flaky tests should be a trait, because a blocklist grows and one day it needlessly halves the suite"); a disagreement with a reason. Pure restatement is noise.
 4. **Disagree with evidence, and say which check produced it.** Naming the command that confirmed it is what makes a dissent actionable rather than a matter of taste.
 5. **State the residual uncertainty.** If something was not checked this session, say so instead of implying coverage.
 
@@ -65,7 +65,7 @@ The follow-up should be either a *new independent verification* (you re-measured
 ## Writing the content
 
 - **Match the repository's language.** An RTL Persian project gets a Persian post with Persian headings. Keep identifiers, paths, flags, and error strings verbatim in their original script.
-- **Always `--body-file`, never `-b '...'`** for anything multi-line. RTL text plus newlines plus shell quoting is a broken combination.
+- **Always `--body-file`, never `-b '...'`** for anything multi-line. RTL text plus newlines plus shell quoting is a broken combination. For a long RTL body, the `addDiscussionComment` mutation with a JSON file is safer still: serialize it in Python with `json.dumps(payload, ensure_ascii=False)` and pass `gh api graphql --input payload.json`. The body never crosses a shell or a prompt field, so ZWNJ (U+200C) survives intact, and the mutation returns the comment URL in the same response you already have to read back.
 - A digest longer than a screen belongs in a file; do not compress it into a summary of a summary.
 - **Write each long body in its own call.** Several multi-line string literals in a single code cell is a syntax-error single point of failure: one bad literal aborts the whole cell, so *none* of the files get written and the batch looks like it ran. One call per file, then a separate call to publish.
 
@@ -87,3 +87,5 @@ Gathering commands, grouping strategy, and the structure that works for a status
 - **A discussion number is not a GraphQL node ID.** `addDiscussionComment` takes the opaque `D_kwDOOL…` global ID; passing the number fails with `Could not resolve to a node with the global id of '123'`. This is independent of the `-f`/`-F` flag choice — both fail on a number. Resolve `{ repository(...) { discussion(number: N) { id } } }` first.
 
 Query and post recipes for multi-thread work: `references/thread-participation.md`.
+
+Before claiming anything about what the repo *enforces* (protected branches, required checks, whether CI runs on a branch at all) or about duplicate commits in a branch history, use `references/repo-integrity-audit.md` — a green check run is evidence about a PR head, not about what is required.

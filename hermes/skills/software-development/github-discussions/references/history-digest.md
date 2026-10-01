@@ -15,13 +15,32 @@ gh pr list -R OWNER/REPO --state open --json number,title
 # Backlog
 gh issue list -R OWNER/REPO --state open --json number,title
 
-# Work not yet in a PR, per author (local clone only)
-git log --all --no-merges --since=<date> --pretty='%cs %an %s'
+# Work not yet in a PR, per author — only refs backed by a configured remote.
+# `--all` includes remote-tracking refs whose remote was deleted, so it reports
+# work as "recent" that exists nowhere anyone can reach. Use origin/BRANCH.
+git log origin/BRANCH --no-merges --since=<date> --pretty='%cs %an %s'
 
 # Divergence — only for a ref backed by a configured remote
 git remote -v
 git rev-list --left-right --count origin/BRANCH...HEAD
 ```
+
+### Anchor the window to the branch tip, not to the thread
+
+"the last 24 hours" is measured from now. Start at the tip commit and subtract, rather than
+using the thread's creation time as the boundary — the question's timestamp is not the window,
+and the count comes out wrong in whichever direction the two differ.
+
+```bash
+git log -1 --format=%H origin/BRANCH                      # what "now" is
+git log --no-merges --since="24 hours ago" origin/BRANCH
+git log -1 --format=%H --before="<since>" origin/BRANCH   # boundary commit for the diffstat
+git diff --shortstat <boundary> origin/BRANCH
+```
+
+Name the anchor in the post. Report merges separately from non-merges: a busy day has far more
+of one than the other, and a single number covering both reads as either a much larger or a
+much smaller day than it actually was.
 
 Prefer `gh pr list --state merged` over parsing `git log --merges` for the narrative: merge subjects are boilerplate ("Merge pull request #N from …") and carry no intent, while a PR title is already the curated summary of its commits.
 

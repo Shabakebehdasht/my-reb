@@ -125,6 +125,87 @@ $row->forceFill(['created_at' => $day, 'updated_at' => $day])->save();
 
 Give time-window fixtures a **midday** timestamp. The app timezone and the database session timezone often differ, and `date(column)` buckets in the *session* zone — a midnight value can fall in the previous day and shift the whole window.
 
+## Feature Parity Across Egress Paths
+
+### A new column must reach every path a user reads or re-enters data through
+
+Adding a field to a model is one line; the places that can silently drop it are the ones
+that matter. When a field lands, check all of them and open the gaps as their own work:
+
+- form create/edit **and** the edit-fill and reset lists (a property absent from the reset
+  array leaks the previous record's value into the next form);
+- import mapping **and** the importer's change-detection field list **and** the user-facing
+  header hint rendered next to the upload control;
+- export column definitions;
+- the index table's column list.
+
+**Rule:** search the new field name across the whole app (`search_files` on content) and
+treat every hit that is a *definition* (migration, model) as the start, not the end — each
+consumer that should read it and does not is a data-loss path. An export that omits a column
+the form collects is silent loss: the user types a value, sees it saved, and it never leaves
+the system.
+
+When an export or import's contract was specified before the field existed, the drift is in
+the spec, not the code — say so explicitly rather than blaming the implementation, and check
+whether the spec is the artifact to update.
+
+## External Integrations
+
+### Rate-limiting a public route behind a proxy needs a trusted forwarded-for header
+
+`ThrottleRequests::resolveRequestSignature()` keys anonymous requests on
+`$request->ip()`, and `getClientIps()` only reads `X-Forwarded-For` when that header is among
+the trusted proxy headers. Configurations that deliberately trust only
+`X-Forwarded-Host/Proto/Port/Prefix` — the standard hardening against IP spoofing — fall back
+to `REMOTE_ADDR`, which behind a load balancer is the proxy itself.
+
+**Rule:** a `throttle:` on a route with no authenticated user is a per-bucket limit on
+whatever the signature resolves to. Behind a proxy that is one shared bucket, so the limit
+becomes a global budget for all visitors and everyone past it gets 429 — while a path that
+looks unthrottled in testing is throttled in production. Before shipping one, confirm which
+header the signature actually resolves to behind the real topology, and give the route a
+signature that does not depend on the client IP if the answer is "the proxy".
+
+### Turning a transport failure into a value: apply it at every caller, or record why not
+
+The useful part of a typed-result adapter is that a connection failure stops being an
+exception travelling through call sites that have to guess. It only buys that where it is
+used, so a scheduled job that still calls the raw service keeps its old failure path.
+
+**Rule:** when introducing a failure-as-value abstraction, enumerate every caller of the
+underlying service — HTTP controllers, queued jobs, scheduled commands — and either convert
+all of them or write down in the abstraction's docblock why the converted call sites are the
+complete set. A job whose failure is routed through the queue's failure handler is a
+legitimate reason to stay unconverted; an unexamined third caller is not.
+
+## Operational Data
+
+### An append-only table written by a high-frequency job needs a retention owner
+
+A run-record table fed by a job on a short schedule grows linearly with no natural ceiling:
+a five-minute job is ~105k rows a year. A timestamp index keeps the *reads* cheap, so nothing
+looks wrong for months — the cost is storage, plus an ever-growing backup.
+
+**Rule:** before shipping a per-run record table, find the project's existing retention
+command and check whether it actually covers the new table — a maintenance command that
+handles one model is not retention for the next one. If nothing covers it, either extend the
+existing command or add a prune with a `--keep-days` flag. Grep for the table name across
+the console commands to prove which side of that line you are on; do not infer coverage from
+the existence of a retention command.
+
+### A duration shared by a writer and a reader belongs in one constant
+
+When a writer stores data with a TTL and a reader decides "is this fresh" by comparing against
+a time window, the two numbers encode one policy and must move together. A literal in each
+place compiles, passes tests, and diverges the first time someone changes the TTL — the reader
+then reports the data as stale while the writer is still refreshing it.
+
+**Rule:** express the duration once (a class constant, or the reader reading the same TTL
+config the writer used) so changing it is a one-line change. Also remember a timezone
+mismatch bites here: comparing an app-timezone wall clock against `time()` is only correct
+because the app sets the default timezone at bootstrap; reading a stored timestamp through a
+raw query facade returns a string, not a cast instance, and loses that guarantee.
+
 ## End-to-End Tests
 
 ### A failing E2E test may be the test that is wrong
