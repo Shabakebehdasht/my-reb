@@ -1,4 +1,20 @@
 {
+  "agent-docs-audit": {
+    "archived_at": null,
+    "created_at": "2026-10-01T09:14:28.319691+00:00",
+    "created_by": "agent",
+    "first_seen_at": null,
+    "last_patched_at": "2026-10-01T11:08:50.150381+00:00",
+    "last_reused_patch_generation": 6,
+    "last_used_at": "2026-10-01T11:08:52.369327+00:00",
+    "last_viewed_at": "2026-10-01T11:08:52.368011+00:00",
+    "patch_count": 6,
+    "patch_generation": 6,
+    "pinned": false,
+    "state": "active",
+    "use_count": 4,
+    "view_count": 4
+  },
   "codebase-inspection": {
     "archived_at": null,
     "created_at": "2026-09-21T21:38:22.585936+00:00",
@@ -14,6 +30,22 @@
     "state": "active",
     "use_count": 1,
     "view_count": 1
+  },
+  "docs-claims-audit": {
+    "archived_at": null,
+    "created_at": "2026-10-01T09:29:12.412654+00:00",
+    "created_by": "agent",
+    "first_seen_at": null,
+    "last_patched_at": null,
+    "last_reused_patch_generation": 0,
+    "last_used_at": "2026-10-01T11:07:58.009560+00:00",
+    "last_viewed_at": "2026-10-01T11:07:58.008542+00:00",
+    "patch_count": 0,
+    "patch_generation": 0,
+    "pinned": false,
+    "state": "active",
+    "use_count": 2,
+    "view_count": 2
   },
   "dogfood": {
     "archived_at": null,
@@ -35,16 +67,16 @@
     "created_at": "2026-09-21T18:58:10.077603+00:00",
     "created_by": "agent",
     "first_seen_at": null,
-    "last_patched_at": "2026-09-29T20:25:06.613259+00:00",
+    "last_patched_at": "2026-10-01T09:13:48.628479+00:00",
     "last_reused_patch_generation": 3,
-    "last_used_at": "2026-09-30T21:01:51.502152+00:00",
-    "last_viewed_at": "2026-09-30T21:01:51.500729+00:00",
-    "patch_count": 3,
-    "patch_generation": 3,
+    "last_used_at": "2026-10-01T09:12:52.983006+00:00",
+    "last_viewed_at": "2026-10-01T09:12:52.979011+00:00",
+    "patch_count": 4,
+    "patch_generation": 4,
     "pinned": false,
     "state": "active",
-    "use_count": 10,
-    "view_count": 10
+    "use_count": 11,
+    "view_count": 11
   },
   "github": {
     "archived_at": null,
@@ -113,14 +145,14 @@
     "created_by": null,
     "last_patched_at": null,
     "last_reused_patch_generation": 0,
-    "last_used_at": "2026-09-28T21:31:49.877755+00:00",
-    "last_viewed_at": "2026-09-28T21:31:49.876107+00:00",
+    "last_used_at": "2026-10-01T09:13:13.240100+00:00",
+    "last_viewed_at": "2026-10-01T09:13:13.238914+00:00",
     "patch_count": 0,
     "patch_generation": 0,
     "pinned": false,
     "state": "active",
-    "use_count": 9,
-    "view_count": 9
+    "use_count": 11,
+    "view_count": 11
   },
   "improve-workflows": {
     "archived_at": null,
@@ -161,14 +193,14 @@
     "first_seen_at": null,
     "last_patched_at": null,
     "last_reused_patch_generation": 0,
-    "last_used_at": "2026-09-29T19:03:45.238340+00:00",
-    "last_viewed_at": "2026-09-29T19:03:45.237076+00:00",
+    "last_used_at": "2026-10-01T06:42:24.603056+00:00",
+    "last_viewed_at": "2026-10-01T06:42:24.564513+00:00",
     "patch_count": 0,
     "patch_generation": 0,
     "pinned": false,
     "state": "active",
-    "use_count": 3,
-    "view_count": 3
+    "use_count": 4,
+    "view_count": 4
   },
   "requesting-code-review": {
     "archived_at": null,
