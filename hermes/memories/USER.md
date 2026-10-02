@@ -10,3 +10,5 @@ go to h-dashboard directory
 /queue everychanges should commit and push to current branch on remote
 /queue when i say pr: you will open pr to https://github.com/asgarimehdi/h-dashboard/tree/beta
 * Verify changes before committing and pushing.
+§
+Every new session must default to the `h-dashboard` folder (Hermes `terminal.cwd` = /home/runner/h-dashboard) and must use CodeGraph plus superpowers skills before doing work.
