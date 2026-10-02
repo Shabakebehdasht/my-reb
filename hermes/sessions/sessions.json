@@ -51,9 +51,9 @@
   },
   "agent:main:telegram:group:-1004376120571:100651143": {
     "session_key": "agent:main:telegram:group:-1004376120571:100651143",
-    "session_id": "20261002_134226_f36e6807",
-    "created_at": "2026-10-02T13:42:26.479117",
-    "updated_at": "2026-10-02T13:42:26.479117",
+    "session_id": "20261002_153640_c633e459",
+    "created_at": "2026-10-02T15:36:40.255868",
+    "updated_at": "2026-10-02T15:36:40.255868",
     "display_name": "گروه تیم",
     "platform": "telegram",
     "chat_type": "group",
@@ -87,7 +87,7 @@
       "user_name": "M A",
       "thread_id": null,
       "chat_topic": null,
-      "message_id": "2012"
+      "message_id": "2048"
     }
   }
 }
