@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 300
     env:
-      REPO_ORIGIN: https://github.com/Shabakebehdasht//h-dashboard.git
+      REPO_ORIGIN: https://github.com/Shabakebehdasht/h-dashboard.git
       WF_NAME: rebecca
 
     steps:
@@ -367,7 +367,7 @@ jobs:
           git config user.name "Shabakebehdasht/"
           git config user.email "Shabakebehdasht/@users.noreply.github.com"
           # Authenticate with PAT for push
-          git remote set-url origin "https://x-access-token:${GH_TOKEN}@github.com/Shabakebehdasht//my-reb.git"
+          git remote set-url origin "https://x-access-token:${GH_TOKEN}@github.com/Shabakebehdasht/my-reb.git"
 
           H=/home/runner/.hermes
           HDEST=hermes
