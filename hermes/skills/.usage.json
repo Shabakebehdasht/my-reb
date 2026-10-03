@@ -100,14 +100,14 @@
     "created_by": null,
     "last_patched_at": null,
     "last_reused_patch_generation": 0,
-    "last_used_at": "2026-09-29T20:38:06.235361+00:00",
-    "last_viewed_at": "2026-09-29T20:38:06.234214+00:00",
+    "last_used_at": "2026-10-03T15:30:02.239881+00:00",
+    "last_viewed_at": "2026-10-03T15:30:02.238593+00:00",
     "patch_count": 0,
     "patch_generation": 0,
     "pinned": false,
     "state": "active",
-    "use_count": 26,
-    "view_count": 26
+    "use_count": 27,
+    "view_count": 27
   },
   "github-discussions": {
     "archived_at": null,
@@ -132,14 +132,14 @@
     "first_seen_at": null,
     "last_patched_at": "2026-10-01T21:47:56.641511+00:00",
     "last_reused_patch_generation": 3,
-    "last_used_at": "2026-10-03T11:23:41.809802+00:00",
-    "last_viewed_at": "2026-10-03T11:23:41.808604+00:00",
+    "last_used_at": "2026-10-03T13:09:37.869305+00:00",
+    "last_viewed_at": "2026-10-03T13:09:37.868068+00:00",
     "patch_count": 3,
     "patch_generation": 3,
     "pinned": false,
     "state": "active",
-    "use_count": 8,
-    "view_count": 8
+    "use_count": 9,
+    "view_count": 9
   },
   "hermes-agent": {
     "archived_at": null,
@@ -225,14 +225,14 @@
     "first_seen_at": null,
     "last_patched_at": null,
     "last_reused_patch_generation": 0,
-    "last_used_at": "2026-10-01T06:42:24.603056+00:00",
-    "last_viewed_at": "2026-10-01T06:42:24.564513+00:00",
+    "last_used_at": "2026-10-03T15:23:10.150097+00:00",
+    "last_viewed_at": "2026-10-03T15:23:10.148959+00:00",
     "patch_count": 0,
     "patch_generation": 0,
     "pinned": false,
     "state": "active",
-    "use_count": 4,
-    "view_count": 4
+    "use_count": 5,
+    "view_count": 5
   },
   "requesting-code-review": {
     "archived_at": null,
@@ -248,6 +248,22 @@
     "state": "active",
     "use_count": 4,
     "view_count": 4
+  },
+  "spike": {
+    "archived_at": null,
+    "created_at": "2026-10-03T15:29:50.588140+00:00",
+    "created_by": null,
+    "first_seen_at": null,
+    "last_patched_at": null,
+    "last_reused_patch_generation": 0,
+    "last_used_at": "2026-10-03T15:29:50.589252+00:00",
+    "last_viewed_at": "2026-10-03T15:29:50.588152+00:00",
+    "patch_count": 0,
+    "patch_generation": 0,
+    "pinned": false,
+    "state": "active",
+    "use_count": 1,
+    "view_count": 1
   },
   "superpowers:writing-plans": {
     "archived_at": null,
