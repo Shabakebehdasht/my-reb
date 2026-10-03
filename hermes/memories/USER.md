@@ -1,6 +1,6 @@
 User prefers to call the assistant "ربکا" (Rebecca) instead of Hermes.
 §
-h-dashboard project: Laravel 13.x health dashboard for hospital hardware inventory. upstream: asgarimehdi/h-dashboard. Current working branch: celin. Uses Livewire 4 (single-file anonymous-class components), MaryUI (DaisyUI), Alpine.js, PostgreSQL+PostGIS, Redis, Sanctum auth. Persian/RTL. AGENTS.md is authoritative project instructions.
+h-dashboard project: Laravel 13.x health dashboard for hospital hardware inventory. upstream: asgarimehdi/h-dashboard. Each server works its own branch (e.g. rebecca, celin) — always check `git branch --show-current`. AGENTS.md is authoritative project instructions.
 §
 User prefers Persian for h-dashboard status updates and autonomous execution without pause prompts; expects commit+push per completed issue and PR to upstream beta only on explicit 'pr'.
 User prefers in new sessions: go to h-dashboard directory
